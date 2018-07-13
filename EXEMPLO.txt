@@ -1,9 +1,8 @@
-0                   //tipo da questao, 0 para placa e 1 para geral
-img.png             //caminho da imagem, caso nao queira basta deixar a linha em branco
-Qual a cor do mar?  //pergunta
-vermelho            //alternativa 1
-azul                //alternativa 2
-amarelho            //alternativa 3
-preto               //alternativa 4
-2                   //numero da alternativa correta
-                    //linha em branco para separar as questoes
+0
+/home/aluno/Área de Trabalho/TransitoFacil/src/transitofacil/imgs/categoriaAdvertencia.png        
+Qual a cor do mar?
+vermelho
+azul
+amarelho
+preto
+2

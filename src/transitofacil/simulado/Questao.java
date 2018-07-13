@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Questao implements Serializable{
     private final String pergunta;
-    private final String imagem;
+    private String imagem;
     private final ArrayList<String> alternativas;
     private final int alternativaCorreta;
 
@@ -30,6 +30,10 @@ public class Questao implements Serializable{
 
     public int getAlternativaCorreta() {
         return alternativaCorreta;
+    }
+    
+    public void setImagem(String imagem){
+        this.imagem = imagem;
     }
     
 }

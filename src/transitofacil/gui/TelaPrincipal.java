@@ -201,6 +201,8 @@ public class TelaPrincipal extends JFrame {
                     } else {
                         try {
                             Questoes.addQuestao(novaQuestao, "geral.bin");
+                            JOptionPane.showMessageDialog(this, "Importado com sucesso de " + escolherArquivo.getSelectedFile(),
+                                    "Sucesso!", JOptionPane.INFORMATION_MESSAGE);
                         } catch (ArquivoException ex) {
                             JOptionPane.showMessageDialog(this, ex.getMessage(),
                                     "Erro!", JOptionPane.ERROR_MESSAGE);

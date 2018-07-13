@@ -6,6 +6,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Random;
 import transitofacil.excecoes.ArquivoException;
@@ -23,7 +25,19 @@ public class Questoes {
                 questoes = (ArrayList<Questao>) ois.readObject();
                 ois.close();
             }
-
+            
+            //nao funciona, tem q arrumar
+//            File arquivo = new File(questao.getImagem());
+//            String[] tipoQuest = arquivoAlvo.split(".");
+//            String[] tipoArq = questao.getImagem().split(".");
+//            System.out.println(tipoQuest.length);
+//            String novaImagem = tipoQuest[0] + "-" + Integer.toString(questoes.size() + 1) + tipoArq[1];
+//            System.out.println(novaImagem);
+//            Files.copy(arquivo.toPath(),
+//                    (new File("img/" + novaImagem).toPath()),
+//                    StandardCopyOption.REPLACE_EXISTING);
+//
+//            questao.setImagem(novaImagem);
             questoes.add(questao);
 
             oos = new ObjectOutputStream(new FileOutputStream(arquivoAlvo));
