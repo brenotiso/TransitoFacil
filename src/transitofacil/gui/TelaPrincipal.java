@@ -100,14 +100,14 @@ public class TelaPrincipal extends JFrame {
         btSimuladoPlacas.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                System.out.println("fazer!");
+                chamarOutraJanela(new TelaSimulado("placas"));
             }
         });
 
         btSimuladoTransitoGeral.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                System.out.println("fazer!");
+                chamarOutraJanela(new TelaSimulado("geral"));
             }
         });
 
@@ -227,7 +227,7 @@ public class TelaPrincipal extends JFrame {
     }
 
     public void validarExemplo() {
-        File f = new File("EXEMPLO.tx");
+        File f = new File("EXEMPLO.txt");
         if (!(f.exists() && !f.isDirectory())) {
             BufferedWriter bw = null;
             try {

@@ -24,7 +24,6 @@ public class Questoes {
                 ois.close();
             }
 
-            System.out.println(questoes);
             questoes.add(questao);
 
             oos = new ObjectOutputStream(new FileOutputStream(arquivoAlvo));
@@ -45,9 +44,8 @@ public class Questoes {
                 ois = new ObjectInputStream(new FileInputStream(arquivoAlvo));
                 questoes = (ArrayList<Questao>) ois.readObject();
                 ois.close();
-                
                 //por padaro sao 20 questoes, caso mudar alterar o valor 20
-                if (questoes.size() < 20) {
+                if (questoes.size() > 20) {
                     Random rand = new Random();
                     for (int i = 0; i < 20; i++) {
                         int randomIndex = rand.nextInt(questoes.size());
@@ -61,7 +59,6 @@ public class Questoes {
         } catch (IOException | ClassNotFoundException e) {
             throw new ArquivoException(arquivoAlvo);
         }
-
         return retorno;
     }
 
