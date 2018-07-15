@@ -31,6 +31,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import transitofacil.excecoes.ArquivoException;
 
 public class TelaPrincipal extends JFrame {
+
     private static TelaPrincipal instancia = null;
 
     private GridBagConstraints gbc;
@@ -50,19 +51,20 @@ public class TelaPrincipal extends JFrame {
     private JLabel lbAddQuestoes;
 
     //SINGLETON
-    public static TelaPrincipal getInstance(){
-        if(instancia == null){
+    public static TelaPrincipal getInstance() {
+        if (instancia == null) {
             instancia = new TelaPrincipal();
         }
         return instancia;
     }
+
     //SINGLETON
     private TelaPrincipal() {
         super("Trânsito Fácil");
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        
+
         construirTela();
         Dimension d = new Dimension(800, 600);
         setSize(d);
@@ -72,9 +74,9 @@ public class TelaPrincipal extends JFrame {
     private void construirTela() {
         gbc = new GridBagConstraints();
         gbl = new GridBagLayout();
-        
+
         setLayout(gbl);
-        
+
         lbTitulo = new JLabel("Aprendizado de Trânsito");
         lbTitulo.setFont(new Font("", Font.BOLD, 28));
 
@@ -137,8 +139,8 @@ public class TelaPrincipal extends JFrame {
         adicionarComponente(lbGrupo3, GridBagConstraints.CENTER, GridBagConstraints.NONE, 8, 0, 1, 1, 0, 0, 3, 0);
         adicionarComponente(lbAddQuestoes, GridBagConstraints.CENTER, GridBagConstraints.NONE, 9, 0, 1, 1, 0, 0, 3, 0);
     }
-    
-    private void chamarOutraJanela(JFrame outraJanela){
+
+    private void chamarOutraJanela(JFrame outraJanela) {
         outraJanela.setLocationRelativeTo(this);
         outraJanela.setVisible(true);
         setVisible(false);
@@ -175,7 +177,7 @@ public class TelaPrincipal extends JFrame {
             try {
                 br = new BufferedReader(new FileReader(escolherArquivo.getSelectedFile()));
                 while (br.ready()) {
-                    int tipo = Integer.parseInt(br.readLine());
+                    String tipo = br.readLine();
                     String imagem = br.readLine();
                     String pergunta = br.readLine();
                     ArrayList<String> alternativas = new ArrayList<String>();
@@ -189,26 +191,17 @@ public class TelaPrincipal extends JFrame {
 
                     Questao novaQuestao = new Questao(pergunta, imagem, alternativas, alternativaCorreta);
 
-                    if (tipo == 0) {
-                        try {
-                            Questoes.addQuestao(novaQuestao, "placas.bin");
-                            JOptionPane.showMessageDialog(this, "Importado com sucesso de " + escolherArquivo.getSelectedFile(),
-                                    "Sucesso!", JOptionPane.INFORMATION_MESSAGE);
-                        } catch (ArquivoException ex) {
-                            JOptionPane.showMessageDialog(this, ex.getMessage(),
-                                    "Erro!", JOptionPane.ERROR_MESSAGE);
-                        }
+                    if (tipo.equals("0")) {
+                        Questoes.addQuestao(novaQuestao, "placas.bin");
+                    } else if (tipo.equals("1")) {
+                        Questoes.addQuestao(novaQuestao, "geral.bin");
                     } else {
-                        try {
-                            Questoes.addQuestao(novaQuestao, "geral.bin");
-                            JOptionPane.showMessageDialog(this, "Importado com sucesso de " + escolherArquivo.getSelectedFile(),
-                                    "Sucesso!", JOptionPane.INFORMATION_MESSAGE);
-                        } catch (ArquivoException ex) {
-                            JOptionPane.showMessageDialog(this, ex.getMessage(),
-                                    "Erro!", JOptionPane.ERROR_MESSAGE);
-                        }
+                        throw new ArrayIndexOutOfBoundsException();
                     }
                 }
+            } catch (ArquivoException ex) {
+                JOptionPane.showMessageDialog(this, ex.getMessage(),
+                        "Erro!", JOptionPane.ERROR_MESSAGE);
             } catch (ArrayIndexOutOfBoundsException e) {
                 JOptionPane.showMessageDialog(this, "Parece que o arquivo que você está tentando importar é inválido!",
                         "Erro!", JOptionPane.ERROR_MESSAGE);
@@ -218,6 +211,8 @@ public class TelaPrincipal extends JFrame {
             } finally {
                 if (br != null) {
                     try {
+                        JOptionPane.showMessageDialog(this, "Importado com sucesso de " + escolherArquivo.getSelectedFile(),
+                                "Sucesso!", JOptionPane.INFORMATION_MESSAGE);
                         br.close();
                     } catch (IOException ioex) {
                         JOptionPane.showMessageDialog(this, "Erro ao fechar o arquivo de tarefas!",
