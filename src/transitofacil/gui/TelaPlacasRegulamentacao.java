@@ -23,6 +23,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 /**
  *
@@ -40,6 +41,7 @@ public class TelaPlacasRegulamentacao extends JFrame{
     private JLabel lbImagemPlacas5;
     private JButton btVoltar;
     private JPanel painelImagemPlacas;
+    private JScrollPane jsp;
     
     public static JFrame getInstance() {
         if (instancia == null) {
@@ -71,8 +73,47 @@ public class TelaPlacasRegulamentacao extends JFrame{
             System.out.println("erro");
         }
         
-        painelImagemPlacas.add(lbImagemPlacas1);
+        try{
+            //String IMG_PATH = "src/transitofacil/imgs/placasRegulamentacao.png";
+            String IMG_PATH = "src/transitofacil/imgs/placaRegulamentacao2.png";
+            BufferedImage img = ImageIO.read(new File(IMG_PATH));
+            lbImagemPlacas2 = new JLabel(new ImageIcon(img));
+        }catch(IOException e){
+            System.out.println("erro");
+        }
         
+        try{
+            //String IMG_PATH = "src/transitofacil/imgs/placasRegulamentacao.png";
+            String IMG_PATH = "src/transitofacil/imgs/placaRegulamentacao3.png";
+            BufferedImage img = ImageIO.read(new File(IMG_PATH));
+            lbImagemPlacas3 = new JLabel(new ImageIcon(img));
+        }catch(IOException e){
+            System.out.println("erro");
+        }
+        
+        try{
+            //String IMG_PATH = "src/transitofacil/imgs/placasRegulamentacao.png";
+            String IMG_PATH = "src/transitofacil/imgs/placaRegulamentacao4.png";
+            BufferedImage img = ImageIO.read(new File(IMG_PATH));
+            lbImagemPlacas4 = new JLabel(new ImageIcon(img));
+        }catch(IOException e){
+            System.out.println("erro");
+        }
+        
+        try{
+            //String IMG_PATH = "src/transitofacil/imgs/placasRegulamentacao.png";
+            String IMG_PATH = "src/transitofacil/imgs/placaRegulamentacao5.png";
+            BufferedImage img = ImageIO.read(new File(IMG_PATH));
+            lbImagemPlacas5 = new JLabel(new ImageIcon(img));
+        }catch(IOException e){
+            System.out.println("erro");
+        }
+        
+        painelImagemPlacas.add(lbImagemPlacas1);
+        painelImagemPlacas.add(lbImagemPlacas2);
+        painelImagemPlacas.add(lbImagemPlacas3);
+        painelImagemPlacas.add(lbImagemPlacas4);
+        painelImagemPlacas.add(lbImagemPlacas5);
         
         btVoltar = new JButton("< Voltar");
         btVoltar.addActionListener(new ActionListener() {
@@ -82,8 +123,14 @@ public class TelaPlacasRegulamentacao extends JFrame{
             }
         });
         
-        adicionarComponente(painelImagemPlacas, GridBagConstraints.CENTER, GridBagConstraints.NONE, 0, 0, 1, 1, 1, 1, 1, 1);//Deve estar zoado
+        
+        jsp = new JScrollPane(painelImagemPlacas);
+        
+        
+        
+        adicionarComponente(jsp, GridBagConstraints.CENTER, GridBagConstraints.NONE, 0, 0, 1, 1, 1, 1, 1, 1);//Deve estar zoado
         adicionarComponente(btVoltar, GridBagConstraints.WEST, GridBagConstraints.NONE, 6, 0, 1, 1, 3, 3, 3, 3);
+        //adicionarComponente(jsp, GridBagConstraints.CENTER, GridBagConstraints.NONE, 0, 1, 1, 1, 1, 1, 1, 1);
         
     }
     
