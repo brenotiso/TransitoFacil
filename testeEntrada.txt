@@ -1,9 +1,9 @@
 placa
-categoriaIndicacao.png
-Qual a cor do mar?
-vermelho
-azul
-amarelho
-preto
-2
+ran-cruzamento-de-vias-A-6.png
+A Placa de Advertência abaixo adverte:
+Cruzamento de vias
+Pista irregular
+Confluência em X
+Interseção em X
+4
 

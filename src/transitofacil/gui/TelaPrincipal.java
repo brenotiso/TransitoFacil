@@ -230,7 +230,7 @@ public class TelaPrincipal extends JFrame {
             try {
                 bw = new BufferedWriter(new FileWriter("EXEMPLO.txt"));
                 bw.write("placa               //tipo da questao(placa ou geral)\n"
-                        + "img.png             //nome da imagem (consultar o arquivo listaImagens.txt), caso nao queira basta deixar a linha em branco\n"
+                        + "img.png             //nome da imagem (imagens disponiveis podem ser vistas/adicionadas na pasta placas), caso nao queira basta deixar a linha em branco\n"
                         + "Qual a cor do mar?  //pergunta\n"
                         + "vermelho            //alternativa 1\n"
                         + "azul                //alternativa 2\n"

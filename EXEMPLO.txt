@@ -1,5 +1,5 @@
 placa               //tipo da questao(placa ou geral)
-img.png             //nome da imagem (consultar o arquivo listaImagens.txt), caso nao queira basta deixar a linha em branco
+img.png             //nome da imagem (imagens disponiveis podem ser vistas/adicionadas na pasta placas), caso nao queira basta deixar a linha em branco
 Qual a cor do mar?  //pergunta
 vermelho            //alternativa 1
 azul                //alternativa 2

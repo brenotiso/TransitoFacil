@@ -136,7 +136,7 @@ public class TelaSimulado extends JFrame {
                 System.out.println();
                 //Adicionando a imagem
                 if (!q.getImagem().equals("")) {
-                    String IMG_PATH = System.getProperty("user.dir") + "/src/transitofacil/imgs/" + q.getImagem(); //verificar essa linha!!!
+                    String IMG_PATH = "placas/" + q.getImagem(); //verificar essa linha!!!
                     BufferedImage img = ImageIO.read(new File(IMG_PATH));
                     JLabel lbImagem = new JLabel(new ImageIcon(img));
                     jpInferior.add(lbImagem);
