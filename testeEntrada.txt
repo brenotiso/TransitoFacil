@@ -1,0 +1,9 @@
+placa
+categoriaIndicacao.png
+Qual a cor do mar?
+vermelho
+azul
+amarelho
+preto
+2
+

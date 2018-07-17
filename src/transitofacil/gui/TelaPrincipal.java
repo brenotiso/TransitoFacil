@@ -190,20 +190,22 @@ public class TelaPrincipal extends JFrame {
                     br.readLine(); //ler linha em branco
 
                     Questao novaQuestao = new Questao(pergunta, imagem, alternativas, alternativaCorreta);
-
-                    if (tipo.equals("0")) {
-                        Questoes.addQuestao(novaQuestao, "placas.bin");
-                    } else if (tipo.equals("1")) {
-                        Questoes.addQuestao(novaQuestao, "geral.bin");
+                    
+                    if (tipo.contentEquals("placa")) {
+                        Questoes.addQuestao(novaQuestao, 0);
+                    } else if (tipo.contentEquals("geral")) {
+                        Questoes.addQuestao(novaQuestao, 1);
                     } else {
                         throw new ArrayIndexOutOfBoundsException();
                     }
                 }
+                JOptionPane.showMessageDialog(this, "Importado com sucesso de " + escolherArquivo.getSelectedFile(),
+                                "Sucesso!", JOptionPane.INFORMATION_MESSAGE);
             } catch (ArquivoException ex) {
                 JOptionPane.showMessageDialog(this, ex.getMessage(),
                         "Erro!", JOptionPane.ERROR_MESSAGE);
             } catch (ArrayIndexOutOfBoundsException e) {
-                JOptionPane.showMessageDialog(this, "Parece que o arquivo que você está tentando importar é inválido!",
+                JOptionPane.showMessageDialog(this, "Tipo de questão inválida!\nEntre com 'placa' ou 'geral'.",
                         "Erro!", JOptionPane.ERROR_MESSAGE);
             } catch (IOException e) {
                 JOptionPane.showMessageDialog(this, "Erro ao ler arquivo!",
@@ -211,8 +213,6 @@ public class TelaPrincipal extends JFrame {
             } finally {
                 if (br != null) {
                     try {
-                        JOptionPane.showMessageDialog(this, "Importado com sucesso de " + escolherArquivo.getSelectedFile(),
-                                "Sucesso!", JOptionPane.INFORMATION_MESSAGE);
                         br.close();
                     } catch (IOException ioex) {
                         JOptionPane.showMessageDialog(this, "Erro ao fechar o arquivo de tarefas!",
@@ -229,8 +229,8 @@ public class TelaPrincipal extends JFrame {
             BufferedWriter bw = null;
             try {
                 bw = new BufferedWriter(new FileWriter("EXEMPLO.txt"));
-                bw.write("0                   //tipo da questao, 0 para placa e 1 para geral\n"
-                        + "img.png             //caminho da imagem, caso nao queira basta deixar a linha em branco\n"
+                bw.write("placa               //tipo da questao(placa ou geral)\n"
+                        + "img.png             //nome da imagem (consultar o arquivo listaImagens.txt), caso nao queira basta deixar a linha em branco\n"
                         + "Qual a cor do mar?  //pergunta\n"
                         + "vermelho            //alternativa 1\n"
                         + "azul                //alternativa 2\n"

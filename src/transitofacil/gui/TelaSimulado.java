@@ -11,13 +11,20 @@ import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.ButtonGroup;
 import javax.swing.ButtonModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTabbedPane;
@@ -49,13 +56,21 @@ public class TelaSimulado extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
 
-        construirTela();
-        Dimension d = new Dimension(800, 600);
-        setSize(d);
-        //pack();
+        try { //verificar essa parte!!
+            construirTela();
+        } catch (ArquivoException ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage(),
+                    "Erro", JOptionPane.ERROR_MESSAGE);
+            chamarOutraJanela(TelaPrincipal.getInstance());
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage(),
+                    "Erro", JOptionPane.ERROR_MESSAGE);
+            chamarOutraJanela(TelaPrincipal.getInstance());
+
+        }
     }
 
-    private void construirTela() {
+    private void construirTela() throws ArquivoException, IOException {
         gbc = new GridBagConstraints();
         gbl = new GridBagLayout();
 
@@ -83,49 +98,55 @@ public class TelaSimulado extends JFrame {
         File f = new File(tipoSimulado + ".bin");
         if (f.exists() && !f.isDirectory()) {
 
-            try {
-                alGruposRespostas = new ArrayList<>();
-                alRespostasCorretas = new ArrayList<>();
-                ArrayList<Questao> questoes = Questoes.obterQuestoesAleatorias(tipoSimulado + ".bin");
-                int i = 1;
-                for (Questao q : questoes) {
-                    JPanel jp = new JPanel(new GridLayout(0, 1));
-                    jp.add(new JLabel(q.getPergunta()));
+            alGruposRespostas = new ArrayList<>();
+            alRespostasCorretas = new ArrayList<>();
+            ArrayList<Questao> questoes = Questoes.obterQuestoesAleatorias(tipoSimulado + ".bin");
+            int i = 1;
+            for (Questao q : questoes) {
+                JPanel jp = new JPanel(new GridLayout(2, 1));
+                jp.add(new JLabel(q.getPergunta()));
 
-                    //adicionar imagem aq
-                    //jp.add(q.getImagem());
-                    ArrayList<String> alternativas = q.getAlternativas();
-                    JRadioButton alternativa1 = new JRadioButton(alternativas.get(0));
-                    JRadioButton alternativa2 = new JRadioButton(alternativas.get(1));
-                    JRadioButton alternativa3 = new JRadioButton(alternativas.get(2));
-                    JRadioButton alternativa4 = new JRadioButton(alternativas.get(3));
-                    ArrayList<JRadioButton> radioAlternativas = new ArrayList<>();
-                    radioAlternativas.add(alternativa1);
-                    radioAlternativas.add(alternativa2);
-                    radioAlternativas.add(alternativa3);
-                    radioAlternativas.add(alternativa4);
+                ArrayList<String> alternativas = q.getAlternativas();
+                JRadioButton alternativa1 = new JRadioButton(alternativas.get(0));
+                JRadioButton alternativa2 = new JRadioButton(alternativas.get(1));
+                JRadioButton alternativa3 = new JRadioButton(alternativas.get(2));
+                JRadioButton alternativa4 = new JRadioButton(alternativas.get(3));
+                ArrayList<JRadioButton> radioAlternativas = new ArrayList<>();
+                radioAlternativas.add(alternativa1);
+                radioAlternativas.add(alternativa2);
+                radioAlternativas.add(alternativa3);
+                radioAlternativas.add(alternativa4);
 
-                    ButtonGroup group = new ButtonGroup();
-                    group.add(alternativa1);
-                    group.add(alternativa2);
-                    group.add(alternativa3);
-                    group.add(alternativa4);
+                ButtonGroup group = new ButtonGroup();
+                group.add(alternativa1);
+                group.add(alternativa2);
+                group.add(alternativa3);
+                group.add(alternativa4);
 
-                    alGruposRespostas.add(group);
-                    alRespostasCorretas.add(radioAlternativas.get(q.getAlternativaCorreta() - 1).getModel());
+                alGruposRespostas.add(group);
+                alRespostasCorretas.add(radioAlternativas.get(q.getAlternativaCorreta() - 1).getModel());
 
-                    JPanel radioPanel = new JPanel(new GridLayout(0, 1));
-                    radioPanel.add(alternativa1);
-                    radioPanel.add(alternativa2);
-                    radioPanel.add(alternativa3);
-                    radioPanel.add(alternativa4);
-                    jp.add(radioPanel);
+                JPanel radioPanel = new JPanel(new GridLayout(4, 1));
+                radioPanel.add(alternativa1);
+                radioPanel.add(alternativa2);
+                radioPanel.add(alternativa3);
+                radioPanel.add(alternativa4);
 
-                    jtpTabs.addTab(Integer.toString(i), jp);
-                    i++;
+                JPanel jpInferior = new JPanel(new GridLayout(1, 2));
+                jpInferior.add(radioPanel);
+
+                System.out.println();
+                //Adicionando a imagem
+                if (!q.getImagem().equals("")) {
+                    String IMG_PATH = System.getProperty("user.dir") + "/src/transitofacil/imgs/" + q.getImagem(); //verificar essa linha!!!
+                    BufferedImage img = ImageIO.read(new File(IMG_PATH));
+                    JLabel lbImagem = new JLabel(new ImageIcon(img));
+                    jpInferior.add(lbImagem);
                 }
-            } catch (ArquivoException ex) {
-                //tratar
+
+                jp.add(jpInferior);
+                jtpTabs.addTab(Integer.toString(i), jp);
+                i++;
             }
 
             tTerminarSimulado = new Thread(new Runnable() {
@@ -155,6 +176,7 @@ public class TelaSimulado extends JFrame {
             jtpTabs.setPreferredSize(new Dimension(650, 430));
             // Adicionando os componentes à tela
             adicionarComponente(jtpTabs, GridBagConstraints.CENTER, GridBagConstraints.NONE, 1, 1, 1, 1, 0, 0, 0, 0);
+
         } else {
             //arrumar futuramente
             btVoltar = new JButton("Voltar");
@@ -169,7 +191,13 @@ public class TelaSimulado extends JFrame {
             adicionarComponente(btVoltar, GridBagConstraints.CENTER, GridBagConstraints.NONE, 2, 1, 1, 1, 0, 0, 0, 0);
         }
 
-        adicionarComponente(lbTitulo, GridBagConstraints.CENTER, GridBagConstraints.NONE, 0, 0, 0, 1, 0, 0, 0, 0);
+        adicionarComponente(lbTitulo, GridBagConstraints.CENTER, GridBagConstraints.NONE,
+                0, 0, 0, 1, 0, 0, 0, 0);
+
+        Dimension d = new Dimension(800, 600);
+
+        setSize(d);
+        //pack();
     }
 
     private void chamarOutraJanela(JFrame outraJanela) {
