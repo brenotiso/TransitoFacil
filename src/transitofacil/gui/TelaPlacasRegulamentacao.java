@@ -50,6 +50,5 @@ public class TelaPlacasRegulamentacao extends Tela {
         
         adicionarComponente(lbImagemPlacas, GridBagConstraints.CENTER, GridBagConstraints.NONE, 0, 0, 1, 1, 1, 1, 1, 1);//Deve estar zoado
         adicionarComponente(btVoltar, GridBagConstraints.WEST, GridBagConstraints.NONE, 6, 0, 1, 1, 3, 3, 3, 3);
-        
     }
 }

@@ -96,4 +96,5 @@ public class TelaPlacas extends Tela {
         adicionarComponente(btSinalizacao, GridBagConstraints.WEST, GridBagConstraints.NONE, 5, 0, 1, 1, 3, 3, 3, 3);
         adicionarComponente(btVoltar, GridBagConstraints.WEST, GridBagConstraints.NONE, 6, 0, 1, 1, 3, 3, 3, 3);
     }
+    
 }

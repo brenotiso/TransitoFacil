@@ -176,4 +176,5 @@ public class TelaSimulado extends Tela {
         adicionarComponente(lbTitulo, GridBagConstraints.CENTER, GridBagConstraints.NONE,
                 0, 0, 0, 1, 0, 0, 0, 0);
     }
+    
 }

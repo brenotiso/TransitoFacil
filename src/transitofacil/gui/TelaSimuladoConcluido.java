@@ -94,4 +94,5 @@ public class TelaSimuladoConcluido extends Tela {
         adicionarComponente(pnResultados, GridBagConstraints.CENTER, GridBagConstraints.NONE, 2, 0, 0, 1, 0, 0, 0, 0);
         adicionarComponente(btVoltar, GridBagConstraints.CENTER, GridBagConstraints.NONE, 3, 0, 0, 1, 0, 0, 0, 0);
     }
+    
 }
