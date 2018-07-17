@@ -48,7 +48,7 @@ public class TelaPrincipal extends Tela {
         }
         return instancia;
     }
-
+    
     //SINGLETON
     private TelaPrincipal() {
         super("Trânsito Fácil");
@@ -209,5 +209,4 @@ public class TelaPrincipal extends Tela {
             }
         }
     }
-
 }
