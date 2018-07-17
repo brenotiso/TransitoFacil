@@ -2,13 +2,10 @@ package transitofacil.gui;
 
 import transitofacil.simulado.*;
 
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.awt.GridLayout;
-import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -20,7 +17,6 @@ import javax.swing.ButtonGroup;
 import javax.swing.ButtonModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -28,12 +24,8 @@ import javax.swing.JRadioButton;
 import javax.swing.JTabbedPane;
 import transitofacil.excecoes.ArquivoException;
 
-public class TelaSimulado extends JFrame {
-
+public class TelaSimulado extends Tela {
     private String tipoSimulado;
-
-    private GridBagConstraints gbc;
-    private GridBagLayout gbl;
 
     private JLabel lbTitulo;
 
@@ -51,9 +43,6 @@ public class TelaSimulado extends JFrame {
 
         this.tipoSimulado = tipoSimulado;
 
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setResizable(false);
-
         try { //verificar essa parte!!
             construirTela();
         } catch (ArquivoException ex) {
@@ -69,11 +58,6 @@ public class TelaSimulado extends JFrame {
     }
 
     private void construirTela() throws ArquivoException, IOException {
-        gbc = new GridBagConstraints();
-        gbl = new GridBagLayout();
-
-        setLayout(gbl);
-
         lbTitulo = new JLabel("Simulado");
         lbTitulo.setFont(new Font("", Font.BOLD, 28));
 
@@ -191,32 +175,5 @@ public class TelaSimulado extends JFrame {
 
         adicionarComponente(lbTitulo, GridBagConstraints.CENTER, GridBagConstraints.NONE,
                 0, 0, 0, 1, 0, 0, 0, 0);
-
-        Dimension d = new Dimension(800, 600);
-
-        setSize(d);
-        //pack();
     }
-
-    private void chamarOutraJanela(JFrame outraJanela) {
-        outraJanela.setLocationRelativeTo(this);
-        outraJanela.setVisible(true);
-        setVisible(false);
-    }
-
-    private void adicionarComponente(Component comp, int anchor, int fill, int linha, int coluna, int larg, int alt,
-            int top, int left, int bot, int right) {
-        gbc.anchor = anchor; // posicionamento do componente na tela (esquerda, direita, centralizado, etc)
-        gbc.fill = fill; // define se o tamanho do componente será expandido ou não
-        gbc.gridy = linha; // linha do grid onde o componente será inserido
-        gbc.gridx = coluna; // coluna do grid onde o componente será inserido
-        gbc.gridwidth = larg; // quantidade de colunas do grid que o componente irá ocupar
-        gbc.weightx = 1.0;
-        gbc.weighty = 1.0;
-        gbc.gridheight = alt; // quantidade de linhas do grid que o componente irá ocupar
-        gbc.insets = new Insets(top, left, bot, right); // espaçamento (em pixels) entre os componentes da tela
-        gbl.setConstraints(comp, gbc); // adiciona o componente "comp" ao layout com as restrições previamente especificadas
-        add(comp); // efetivamente insere o componente na tela
-    }
-
 }
