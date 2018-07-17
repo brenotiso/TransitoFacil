@@ -12,6 +12,10 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -48,19 +52,22 @@ public class TelaPlacasRegulamentacao extends JFrame{
     private void construirTela(){
         gbc = new GridBagConstraints();
         gbl = new GridBagLayout();
-        ImageIcon icone = new ImageIcon("../imgs/placasRegulamentacao.png");//verificar pq a imagem não aparece na janela
-        JLabel lbImagemPlacas = new JLabel(icone);
-        JButton btVoltar = new JButton("< Voltar");
+        setLayout(gbl);
+        try{
+            String IMG_PATH = "src/transitofacil/imgs/categoriaAtrativos.png";
+            BufferedImage img = ImageIO.read(new File(IMG_PATH));
+            lbImagemPlacas = new JLabel(new ImageIcon(img));
+        }catch(IOException e){
+            System.out.println("erro");
+        }
+        
+        btVoltar = new JButton("< Voltar");
         btVoltar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 chamarOutraJanela(TelaPlacas.getInstance());
             }
         });
-        
-    
-        
-        setLayout(gbl);
         
         adicionarComponente(lbImagemPlacas, GridBagConstraints.CENTER, GridBagConstraints.NONE, 0, 0, 1, 1, 1, 1, 1, 1);//Deve estar zoado
         adicionarComponente(btVoltar, GridBagConstraints.WEST, GridBagConstraints.NONE, 6, 0, 1, 1, 3, 3, 3, 3);

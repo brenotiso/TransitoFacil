@@ -66,7 +66,7 @@ public class TelaPlacas extends JFrame {
         btRegulamentacao.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                System.out.println("fazer!");
+                chamarOutraJanela(TelaPlacasRegulamentacao.getInstance());
             }
         });
 
