@@ -14,6 +14,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
@@ -45,7 +46,8 @@ public class TelaInformacoesPlacas extends Tela {
                 lbImagemPlaca = new JLabel(new ImageIcon(img));
                 painelImagemPlacas.add(lbImagemPlaca);
             } catch (IOException e) {
-                System.out.println("erro");
+                JOptionPane.showMessageDialog(this, "Erro ao carregar as placas!",
+                            "Ops...", JOptionPane.ERROR_MESSAGE);
             }
         }
 
