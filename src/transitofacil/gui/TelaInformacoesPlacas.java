@@ -22,8 +22,7 @@ public class TelaInformacoesPlacas extends Tela {
     public String linkImagem;
 
     private JButton btVoltar;
-    private JPanel painelImagemPlacas;
-    private JLabel lbImagemPlaca;
+    private JLabel lbImagem;
     private JScrollPane jsp;
     private JLabel lbTitulo;
 
@@ -36,7 +35,6 @@ public class TelaInformacoesPlacas extends Tela {
     private void construirTela() {
         lbTitulo = new JLabel("Placas" + descobrirTitulo());
         lbTitulo.setFont(new Font("", Font.BOLD, 28));
-        painelImagemPlacas = new JPanel(new GridLayout(5, 1, 20, 20));
 
         BufferedImage img = null;
         try {
@@ -44,7 +42,8 @@ public class TelaInformacoesPlacas extends Tela {
         } catch (IOException ex) {
             System.out.println("erro");
         }
-        JLabel lbImagem = new JLabel(new ImageIcon(img));
+        
+        lbImagem = new JLabel(new ImageIcon(img));
         
         btVoltar = new JButton("< Voltar");
         btVoltar.addActionListener(new ActionListener() {
