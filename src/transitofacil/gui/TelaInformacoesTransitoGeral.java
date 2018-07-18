@@ -5,12 +5,16 @@
  */
 package transitofacil.gui;
 
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import javax.swing.JButton;
 import javax.swing.JEditorPane;
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 
 /**
  *
@@ -19,22 +23,38 @@ import javax.swing.JLabel;
 public class TelaInformacoesTransitoGeral extends Tela{
     private String linkArquivo;
     private JButton btVoltar;
-    private JLabel lbTitulo;
-    
-    public TelaInformacoesTransitoGeral(String linkArquivo) throws IOException {
+
+    public TelaInformacoesTransitoGeral(String linkArquivo){
         super("Transito Fácil - Trânsito Geral");
         this.linkArquivo = linkArquivo;
         construirTela();
     }
     
-    private void construirTela() throws IOException{
-        lbTitulo = new JLabel("Trânsito Geral");
-        lbTitulo.setFont(new Font("", Font.BOLD, 28));
-        
-        JEditorPane painelEdicoes = new JEditorPane(linkArquivo);
+    private void construirTela(){
+        btVoltar = new JButton("Voltar");
+        btVoltar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                chamarOutraJanela(TelaTransitoGeral.getInstance());
+            }
+        });
+        JEditorPane painelEdicoes = null;
+        System.out.println(linkArquivo);
+        try {
+            painelEdicoes = new JEditorPane("file:///" + System.getProperty("user.dir") 
+                    + "/src/transitofacil/linksTransitoGeral/" + linkArquivo);
+        } catch (IOException ex) {
+            System.out.println("erro");
+        }
         painelEdicoes.setEditable(false);
         
-        adicionarComponente(painelEdicoes, GridBagConstraints.CENTER, GridBagConstraints.NONE, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+        JScrollPane jsp = new JScrollPane(painelEdicoes);
+        jsp.setPreferredSize(new Dimension(790, 520));
+        
+        adicionarComponente(jsp, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.NONE, 
+                0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+        adicionarComponente(btVoltar, GridBagConstraints.LAST_LINE_END, GridBagConstraints.NONE,
+                1, 0, 1, 1, 10, 0, 3, 3, 0.0, 0.0, 0, 0);
     }
     
 }

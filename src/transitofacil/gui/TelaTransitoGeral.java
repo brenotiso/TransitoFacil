@@ -4,13 +4,11 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
 public class TelaTransitoGeral extends Tela {
+
     private static TelaTransitoGeral instancia = null;
     private JLabel lbTitulo;
     private JButton btLegislacao;
@@ -18,80 +16,64 @@ public class TelaTransitoGeral extends Tela {
     private JButton btPrimeirosSocorros;
     private JButton btMecanica;
     private JButton btVoltar;
-    
-    public static TelaTransitoGeral getInstance(){
-        if(instancia == null){
+
+    public static TelaTransitoGeral getInstance() {
+        if (instancia == null) {
             instancia = new TelaTransitoGeral();
         }
         return instancia;
     }
-    
+
     private TelaTransitoGeral() {
         super("Trânsito Facil - Trânsito Geral");
         construirTela();
     }
-    
-    private void construirTela(){
+
+    private void construirTela() {
         lbTitulo = new JLabel("Trânsito Geral");
         lbTitulo.setFont(new Font("", Font.BOLD, 28));
-        
+
         btLegislacao = new JButton("Legislação de trânsito");
         btDirecaoDefensiva = new JButton("Direção Defensiva");
         btPrimeirosSocorros = new JButton("Primeiros Socorros");
         btMecanica = new JButton("Mecânica");
-        btVoltar = new JButton("< Voltar");
-        
+        btVoltar = new JButton("Voltar");
+
         btLegislacao.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                try {
-                    chamarOutraJanela(new TelaInformacoesTransitoGeral("src/transitofacil/linksTransitoGeral/legislacao.html"));
-                } catch (IOException ex) {
-                    Logger.getLogger(TelaTransitoGeral.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                chamarOutraJanela(new TelaInformacoesTransitoGeral("legislacao.html"));
             }
         });
-        
+
         btDirecaoDefensiva.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                try {
-                    chamarOutraJanela(new TelaInformacoesTransitoGeral("src/transitofacil/linksTransitoGeral/direcao_defensiva.html"));
-                } catch (IOException ex) {
-                    Logger.getLogger(TelaTransitoGeral.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                chamarOutraJanela(new TelaInformacoesTransitoGeral("direcao_defensiva.html"));
             }
         });
-        
+
         btPrimeirosSocorros.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                try {
-                    chamarOutraJanela(new TelaInformacoesTransitoGeral("src/transitofacil/linksTransitoGeral/primeiros_socorros.html"));
-                } catch (IOException ex) {
-                    Logger.getLogger(TelaTransitoGeral.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                chamarOutraJanela(new TelaInformacoesTransitoGeral("primeiros_socorros.html"));
             }
         });
-        
+
         btMecanica.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                try {
-                    chamarOutraJanela(new TelaInformacoesTransitoGeral("src/transitofacil/linksTransitoGeral/mecanica.html"));
-                } catch (IOException ex) {
-                    Logger.getLogger(TelaTransitoGeral.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                chamarOutraJanela(new TelaInformacoesTransitoGeral("mecanica.html"));
             }
         });
-        
+
         btVoltar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 chamarOutraJanela(TelaPrincipal.getInstance());
             }
         });
-        
+
         adicionarComponente(lbTitulo, GridBagConstraints.PAGE_START, GridBagConstraints.NONE,
                 0, 0, 2, 1, 3, 3, 3, 3, 0.0, 0.5, 0, 0);
         adicionarComponente(btLegislacao, GridBagConstraints.LINE_START, GridBagConstraints.NONE,
@@ -105,7 +87,5 @@ public class TelaTransitoGeral extends Tela {
         adicionarComponente(btVoltar, GridBagConstraints.LAST_LINE_END, GridBagConstraints.NONE,
                 3, 1, 1, 1, 10, 0, 3, 3, 0.5, 0.5, 0, 0);
     }
-    
-    
-    
+
 }

@@ -42,7 +42,7 @@ public class TelaInformacoesPlacas extends Tela {
         
         lbImagem = new JLabel(new ImageIcon(img));
         
-        btVoltar = new JButton("< Voltar");
+        btVoltar = new JButton("Voltar");
         btVoltar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
