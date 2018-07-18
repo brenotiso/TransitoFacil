@@ -19,11 +19,6 @@ public class TelaPlacas extends Tela {
     private JButton btAtrativos;
     private JButton btSinalizacao;
     private JButton btVoltar;
-    private ArrayList<String> linkImagensRegulamentacao = new ArrayList();
-    private ArrayList<String> linkImagensAdvertencia = new ArrayList();
-    private ArrayList<String> linkImagensIndicacao = new ArrayList();
-    private ArrayList<String> linkImagensAtrativos = new ArrayList();
-    private ArrayList<String> linkImagensSinalizacaoObras = new ArrayList();
 
     //SINGLETON
     public static TelaPlacas getInstance(){
@@ -35,41 +30,6 @@ public class TelaPlacas extends Tela {
     //SINGLETON
     private TelaPlacas() {
         super("Trânsito Fácil - Placas");
-        
-        //linkImagensRegulamentacao.add("src/transitofacil/imgs/placaRegulamentacao1.png");
-        //linkImagensRegulamentacao.add("src/transitofacil/imgs/placaRegulamentacao2.png");
-        //linkImagensRegulamentacao.add("src/transitofacil/imgs/placaRegulamentacao3.png");
-        //linkImagensRegulamentacao.add("src/transitofacil/imgs/placaRegulamentacao4.png");
-        //linkImagensRegulamentacao.add("src/transitofacil/imgs/placaRegulamentacao5.png");
-        linkImagensRegulamentacao.add("src/transitofacil/imgs/placaRegulamentacao.png");
-        
-        //linkImagensAdvertencia.add("src/transitofacil/imgs/placaAdvertencia1.png");
-        //linkImagensAdvertencia.add("src/transitofacil/imgs/placaAdvertencia2.png");
-        //linkImagensAdvertencia.add("src/transitofacil/imgs/placaAdvertencia3.png");
-       // linkImagensAdvertencia.add("src/transitofacil/imgs/placaAdvertencia4.png");
-        ///linkImagensAdvertencia.add("src/transitofacil/imgs/placaAdvertencia5.png");
-       // linkImagensAdvertencia.add("src/transitofacil/imgs/placaAdvertencia6.png");
-       // linkImagensAdvertencia.add("src/transitofacil/imgs/placaAdvertencia7.png");
-       linkImagensAdvertencia.add("src/transitofacil/imgs/placaAdvertencia.png");
-        
-        //linkImagensIndicacao.add("src/transitofacil/imgs/placaIndicacao1.png");
-        //linkImagensIndicacao.add("src/transitofacil/imgs/placaIndicacao2.png");
-        //linkImagensIndicacao.add("src/transitofacil/imgs/placaIndicacao3.png");
-        linkImagensIndicacao.add("src/transitofacil/imgs/placaIndicacao.png");
-        
-        //linkImagensAtrativos.add("src/transitofacil/imgs/placaAtrativos1.png");
-        //linkImagensAtrativos.add("src/transitofacil/imgs/placaAtrativos2.png");
-       // linkImagensAtrativos.add("src/transitofacil/imgs/placaAtrativos3.png");
-        //linkImagensAtrativos.add("src/transitofacil/imgs/placaAtrativos4.png");
-        //linkImagensAtrativos.add("src/transitofacil/imgs/placaAtrativos5.png");
-        //linkImagensAtrativos.add("src/transitofacil/imgs/placaAtrativos6.png");
-        linkImagensAtrativos.add("src/transitofacil/imgs/placaAtrativos.png");
-        
-        //linkImagensSinalizacaoObras.add("src/transitofacil/imgs/placaObra1.png");
-        //linkImagensSinalizacaoObras.add("src/transitofacil/imgs/placaObra2.png");
-        //linkImagensSinalizacaoObras.add("src/transitofacil/imgs/placaObra3.png");
-        linkImagensSinalizacaoObras.add("src/transitofacil/imgs/placaObra.png");
-
         construirTela();
     }
 
@@ -87,35 +47,35 @@ public class TelaPlacas extends Tela {
         btRegulamentacao.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                chamarOutraJanela(new TelaInformacoesPlacas(linkImagensRegulamentacao));
+                chamarOutraJanela(new TelaInformacoesPlacas("src/transitofacil/imgs/placaRegulamentacao.png"));
             }
         });
 
         btAdvertencia.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                chamarOutraJanela(new TelaInformacoesPlacas(linkImagensAdvertencia));
+                chamarOutraJanela(new TelaInformacoesPlacas("src/transitofacil/imgs/placaAdvertencia.png"));
             }
         });
 
         btIndicacao.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                chamarOutraJanela(new TelaInformacoesPlacas(linkImagensIndicacao));
+                chamarOutraJanela(new TelaInformacoesPlacas("src/transitofacil/imgs/placaIndicacao.png"));
             }
         });
 
         btAtrativos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                chamarOutraJanela(new TelaInformacoesPlacas(linkImagensAtrativos));
+                chamarOutraJanela(new TelaInformacoesPlacas("src/transitofacil/imgs/placaAtrativos.png"));
             }
         });
 
         btSinalizacao.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                chamarOutraJanela(new TelaInformacoesPlacas(linkImagensSinalizacaoObras));
+                chamarOutraJanela(new TelaInformacoesPlacas("src/transitofacil/imgs/placaObra.png"));
             }
         });
 
