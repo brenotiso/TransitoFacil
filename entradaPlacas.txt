@@ -1,0 +1,188 @@
+placa
+ran-cruzamento-de-vias-A-6.png
+A Placa de Advertência abaixo adverte:
+Cruzamento de vias
+Pista irregular
+Confluência em X
+Interseção em X
+4
+
+placa
+-estacionamento-de-trailer.png
+A Placa Auxiliar abaixo regulamenta:
+Compra e Venda de Trailers
+Estacionamento de Trailer
+Churrascaria
+Estacionamento de Motocicletas
+2
+
+placa
+ares-transporte-sobre-agua.png
+A Placa Auxiliar abaixo regulamenta:
+Terminal rodoviário
+Transporte sobre água
+Porto
+Proibida parada de balsas
+2
+
+placa
+em-protegida-para-pedestre.png
+A Placa Auxiliar abaixo regulamenta:
+Proibida passagem de pedestres
+Tráfego de tração animal
+Espaço Cultural
+Passagem protegida para pedestres
+4
+
+placa
+etran-pista-irregular-A-17.png
+A Placa de Advertência abaixo adverte:
+Saliência a frente
+Lombada a frente
+Pista irregular
+Pista escorregadia
+3
+
+placa
+sta-sinuosa-a-direita-A-3b.png
+A Placa de Advertência abaixo adverte:
+Curva em "S" a direita
+Depressão a frente
+Pista sinuosa a direita
+Pista a direita
+3
+
+placa
+s-primeira-a-direita-A-11b.png
+A Placa de Advertência abaixo adverte:
+Junções a direita
+Junções sucessivas contrárias primeira a esquerda
+Junções sucessivas contrárias primeira a direita
+Via lateral primeira a esquerda
+3
+
+placa
+-Detran-de-preferencia-R-2.png
+A Placa de Regulamentação abaixo indica:
+Dê a preferência
+Via urbana
+Obrigatório uso do triângulo
+Acidente na pista
+1
+
+placa
+-frente-ou-a-direita-R-25d.png
+A Placa de Regulamentação abaixo indica:
+Cruzamento à esquerda
+Siga em frente ou vire à direita
+Siga em frente ou vire à esquerda
+Vire a esquerda
+2
+
+placa
+n-proibido-ultrapassar-R-7.png
+A Placa de Regulamentação abaixo indica:
+Proibido ultrapassar
+Dê a preferência
+Permitido ultrapassar
+Proibido trânsito de automóveis
+1
+
+placa
+mo-permitido-por-eixo-R-17.png
+A Placa de Regulamentação abaixo indica:
+Peso máximo permitido por eixo
+Proibido caminhões com mais de dois eixos
+Carga máxima permitida
+Altura máximo permitido
+1
+
+placa
+do-parar-e-estacionar-R-6c.png
+A Placa de Regulamentação abaixo indica:
+Proibido estacionar
+Proibido embarque e desembarque
+Proibido parar
+Proibido parar e estacionar
+4
+
+placa
+ulos-de-tracao-animal-R-11.png
+A Placa de Regulamentação abaixo indica:
+Proibido tráfego de carroças
+Proibido trânsito de ve
+Cuidado, animais à frente!
+Proibido trânsito de veículos de tração animal
+4
+
+placa
+obras-projecao-de-cascalho.png
+A Placa de Sinalização de Obras abaixo indica:
+Cuidado! Obras a frente
+Projeção de cascalho
+Perigo de desmoronamento
+Sujeira na pista
+2
+
+placa
+n-obras-caminhoes-na-pista.png
+A Placa de Sinalização de Obras abaixo indica:
+Homens trabalhando
+Proibido tráfego de caminhões
+Caminhões à frente
+Permitido tráfego de caminhões
+3
+
+placa
+prova-Detran-obras-lombada.png
+A Placa de Sinalização de Obras abaixo indica:
+Aclive acentuado
+Buracos na pista.
+Lombada
+Saliências na pista
+3
+
+placa
+as-area-com-desmoronamento.png
+A Placa de Sinalização de Obras abaixo indica:
+Área de desmoronamento
+Projeção de cascalho
+Estrada perigosa
+Acidente à frente
+1
+
+placa
+namento-regulamentado-R-6b.png
+A Placa de Regulamentação abaixo indica:
+Estacionamento Regulamentado
+Estacionamento de motocicletas
+Estacionamento de caminhões
+Proibido estacionar
+1
+
+placa
+conserve-se-a-direita-R-23.png
+A Placa de Regulamentação abaixo indica:
+Conserve-se à esquerda
+Conserve-se à direita
+Proibido ultrapassar à direita
+Carros à direita
+2
+
+placa
+ento-maximo-permitido-R-18.png
+A Placa de Regulamentação abaixo indica:
+Largura máxima permitida
+Peso máximo permitido
+Proibido tráfego de veículos de carga
+Comprimento máximo permitido
+4
+
+placa
+-transito-de-caminhoes-R-9.png
+A Placa de Regulamentação abaixo indica:
+Proibido trânsito de veículos agrícolas
+Proibido trânsito de veículos de carga
+Proibido trânsito de carretas
+Permitido trânsito de caminhões e carretas
+2

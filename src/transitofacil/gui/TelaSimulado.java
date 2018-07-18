@@ -120,7 +120,7 @@ public class TelaSimulado extends Tela {
                 System.out.println();
                 //Adicionando a imagem
                 if (!q.getImagem().equals("")) {
-                    String IMG_PATH = "placas/" + q.getImagem(); //verificar essa linha!!!
+                    String IMG_PATH = "placas/" + q.getImagem();
                     BufferedImage img = ImageIO.read(new File(IMG_PATH));
                     JLabel lbImagem = new JLabel(new ImageIcon(img));
                     jpInferior.add(lbImagem);
@@ -136,7 +136,7 @@ public class TelaSimulado extends Tela {
                 public void run() {
                     while (true) {
                         if (verificaGupos()) {
-                            adicionarComponente(btTerminar, GridBagConstraints.CENTER, GridBagConstraints.NONE, 2, 1, 1, 1, 0, 0, 0, 0, 0.0, 0.0, 0, 0);
+                            adicionarComponente(btTerminar, GridBagConstraints.PAGE_END, GridBagConstraints.NONE, 2, 1, 1, 1, 0, 0, 0, 0, 0.0, 0.0, 0, 0);
                             revalidate();
                             repaint();
                             return;
@@ -155,7 +155,7 @@ public class TelaSimulado extends Tela {
             });
             tTerminarSimulado.start();
 
-            jtpTabs.setPreferredSize(new Dimension(650, 430));
+            jtpTabs.setPreferredSize(new Dimension(690, 430));
             // Adicionando os componentes à tela
             adicionarComponente(jtpTabs, GridBagConstraints.CENTER, GridBagConstraints.NONE, 1, 1, 1, 1, 0, 0, 0, 0, 0.0, 0.0, 0, 0);
 
@@ -170,10 +170,10 @@ public class TelaSimulado extends Tela {
             });
             JLabel nada = new JLabel("Nenhuma pergunta cadastrada!");
             adicionarComponente(nada, GridBagConstraints.CENTER, GridBagConstraints.NONE, 1, 1, 1, 1, 0, 0, 0, 0, 0.0, 0.0, 0, 0);
-            adicionarComponente(btVoltar, GridBagConstraints.CENTER, GridBagConstraints.NONE, 2, 1, 1, 1, 0, 0, 0, 0, 0.0, 0.0, 0, 0);
+            adicionarComponente(btVoltar, GridBagConstraints.PAGE_END, GridBagConstraints.NONE, 2, 1, 1, 1, 0, 0, 0, 0, 0.0, 0.0, 0, 0);
         }
 
-        adicionarComponente(lbTitulo, GridBagConstraints.CENTER, GridBagConstraints.NONE,
+        adicionarComponente(lbTitulo, GridBagConstraints.PAGE_START, GridBagConstraints.NONE,
                 0, 0, 0, 1, 0, 0, 0, 0, 0.0, 0.0, 0, 0);
     }
 }
