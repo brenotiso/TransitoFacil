@@ -99,9 +99,9 @@ public class TelaPrincipal extends Tela {
         btPlacas.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
-                jlPainelTitulo.setText("btPlacas");
+                jlPainelTitulo.setText("Uma infinidade de Placas!");
                 jlPainelDescricao.setIcon(imagemVazia);
-                jlPainelDescricao.setText("<html>Line1 <br/> Line2 <br/> Line3</html>");
+                jlPainelDescricao.setText("<html>Permite escolher qual tipo de placa deseja estudar.<br> Contém uma infinidade de placas que vão te preparar<br> para o simulado.</html>");
                 jlPainelDescricao.setHorizontalTextPosition(JLabel.CENTER);
             }
 
@@ -122,9 +122,9 @@ public class TelaPrincipal extends Tela {
         btTransitoGeral.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
-                jlPainelTitulo.setText("btTransitoGeral");
+                jlPainelTitulo.setText("Informações gerais sobre Trânsito");
                 jlPainelDescricao.setIcon(imagemVazia);
-                jlPainelDescricao.setText("<html>Line1 <br/> Line2 <br/> Line3</html>");
+                jlPainelDescricao.setText("<html>Várias informações sobre trânsito<br> que vão te preparar para o simulado.</html>");
                 jlPainelDescricao.setHorizontalTextPosition(JLabel.CENTER);
             }
 
@@ -145,9 +145,9 @@ public class TelaPrincipal extends Tela {
         btSimuladoPlacas.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
-                jlPainelTitulo.setText("btSimuladoPlacas");
+                jlPainelTitulo.setText("Simulado sobre Placas");
                 jlPainelDescricao.setIcon(imagemVazia);
-                jlPainelDescricao.setText("<html>Line1 <br/> Line2 <br/> Line3</html>");
+                jlPainelDescricao.setText("<html>Várias questões abordando todos os tipos de placas.</html>");
                 jlPainelDescricao.setHorizontalTextPosition(JLabel.CENTER);
             }
 
@@ -168,9 +168,9 @@ public class TelaPrincipal extends Tela {
         btSimuladoTransitoGeral.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
-                jlPainelTitulo.setText("btSimuladoTransitoGeral");
+                jlPainelTitulo.setText("Simulado sobre Trânsito Geral");
                 jlPainelDescricao.setIcon(imagemVazia);
-                jlPainelDescricao.setText("<html>Line1 <br/> Line2 <br/> Line3</html>");
+                jlPainelDescricao.setText("<html>Várias questões abordando todo o conteúdo de trânsito.</html>");
                 jlPainelDescricao.setHorizontalTextPosition(JLabel.CENTER);
             }
 

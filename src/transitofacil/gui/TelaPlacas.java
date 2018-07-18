@@ -36,34 +36,39 @@ public class TelaPlacas extends Tela {
     private TelaPlacas() {
         super("Trânsito Fácil - Placas");
         
-        linkImagensRegulamentacao.add("src/transitofacil/imgs/placaRegulamentacao1.png");
-        linkImagensRegulamentacao.add("src/transitofacil/imgs/placaRegulamentacao2.png");
-        linkImagensRegulamentacao.add("src/transitofacil/imgs/placaRegulamentacao3.png");
-        linkImagensRegulamentacao.add("src/transitofacil/imgs/placaRegulamentacao4.png");
-        linkImagensRegulamentacao.add("src/transitofacil/imgs/placaRegulamentacao5.png");
+        //linkImagensRegulamentacao.add("src/transitofacil/imgs/placaRegulamentacao1.png");
+        //linkImagensRegulamentacao.add("src/transitofacil/imgs/placaRegulamentacao2.png");
+        //linkImagensRegulamentacao.add("src/transitofacil/imgs/placaRegulamentacao3.png");
+        //linkImagensRegulamentacao.add("src/transitofacil/imgs/placaRegulamentacao4.png");
+        //linkImagensRegulamentacao.add("src/transitofacil/imgs/placaRegulamentacao5.png");
+        linkImagensRegulamentacao.add("src/transitofacil/imgs/placaRegulamentacao.png");
         
-        linkImagensAdvertencia.add("src/transitofacil/imgs/placaAdvertencia1.png");
-        linkImagensAdvertencia.add("src/transitofacil/imgs/placaAdvertencia2.png");
-        linkImagensAdvertencia.add("src/transitofacil/imgs/placaAdvertencia3.png");
-        linkImagensAdvertencia.add("src/transitofacil/imgs/placaAdvertencia4.png");
-        linkImagensAdvertencia.add("src/transitofacil/imgs/placaAdvertencia5.png");
-        linkImagensAdvertencia.add("src/transitofacil/imgs/placaAdvertencia6.png");
-        linkImagensAdvertencia.add("src/transitofacil/imgs/placaAdvertencia7.png");
+        //linkImagensAdvertencia.add("src/transitofacil/imgs/placaAdvertencia1.png");
+        //linkImagensAdvertencia.add("src/transitofacil/imgs/placaAdvertencia2.png");
+        //linkImagensAdvertencia.add("src/transitofacil/imgs/placaAdvertencia3.png");
+       // linkImagensAdvertencia.add("src/transitofacil/imgs/placaAdvertencia4.png");
+        ///linkImagensAdvertencia.add("src/transitofacil/imgs/placaAdvertencia5.png");
+       // linkImagensAdvertencia.add("src/transitofacil/imgs/placaAdvertencia6.png");
+       // linkImagensAdvertencia.add("src/transitofacil/imgs/placaAdvertencia7.png");
+       linkImagensAdvertencia.add("src/transitofacil/imgs/placaAdvertencia.png");
         
-        linkImagensIndicacao.add("src/transitofacil/imgs/placaIndicacao1.png");
-        linkImagensIndicacao.add("src/transitofacil/imgs/placaIndicacao2.png");
-        linkImagensIndicacao.add("src/transitofacil/imgs/placaIndicacao3.png");
+        //linkImagensIndicacao.add("src/transitofacil/imgs/placaIndicacao1.png");
+        //linkImagensIndicacao.add("src/transitofacil/imgs/placaIndicacao2.png");
+        //linkImagensIndicacao.add("src/transitofacil/imgs/placaIndicacao3.png");
+        linkImagensIndicacao.add("src/transitofacil/imgs/placaIndicacao.png");
         
-        linkImagensAtrativos.add("src/transitofacil/imgs/placaAtrativos1.png");
-        linkImagensAtrativos.add("src/transitofacil/imgs/placaAtrativos2.png");
-        linkImagensAtrativos.add("src/transitofacil/imgs/placaAtrativos3.png");
-        linkImagensAtrativos.add("src/transitofacil/imgs/placaAtrativos4.png");
-        linkImagensAtrativos.add("src/transitofacil/imgs/placaAtrativos5.png");
-        linkImagensAtrativos.add("src/transitofacil/imgs/placaAtrativos6.png");
+        //linkImagensAtrativos.add("src/transitofacil/imgs/placaAtrativos1.png");
+        //linkImagensAtrativos.add("src/transitofacil/imgs/placaAtrativos2.png");
+       // linkImagensAtrativos.add("src/transitofacil/imgs/placaAtrativos3.png");
+        //linkImagensAtrativos.add("src/transitofacil/imgs/placaAtrativos4.png");
+        //linkImagensAtrativos.add("src/transitofacil/imgs/placaAtrativos5.png");
+        //linkImagensAtrativos.add("src/transitofacil/imgs/placaAtrativos6.png");
+        linkImagensAtrativos.add("src/transitofacil/imgs/placaAtrativos.png");
         
-        linkImagensSinalizacaoObras.add("src/transitofacil/imgs/placaObra1.png");
-        linkImagensSinalizacaoObras.add("src/transitofacil/imgs/placaObra2.png");
-        linkImagensSinalizacaoObras.add("src/transitofacil/imgs/placaObra3.png");
+        //linkImagensSinalizacaoObras.add("src/transitofacil/imgs/placaObra1.png");
+        //linkImagensSinalizacaoObras.add("src/transitofacil/imgs/placaObra2.png");
+        //linkImagensSinalizacaoObras.add("src/transitofacil/imgs/placaObra3.png");
+        linkImagensSinalizacaoObras.add("src/transitofacil/imgs/placaObra.png");
 
         construirTela();
     }
@@ -133,8 +138,8 @@ public class TelaPlacas extends Tela {
         adicionarComponente(btAtrativos, GridBagConstraints.LINE_END, GridBagConstraints.NONE,
                 2, 1, 1, 1, 3, 3, 3, 140, 0.5, 0.5, 0, 50);
         adicionarComponente(btSinalizacao, GridBagConstraints.CENTER, GridBagConstraints.NONE,
-                3, 0, 2, 1, 3, 3, 70, 3, 0.5, 0.5, 0, 50);
+                3, 0, 2, 1, 3, 3, 0, 3, 0.5, 0.5, 0, 50);
         adicionarComponente(btVoltar, GridBagConstraints.LAST_LINE_END, GridBagConstraints.NONE,
-                4, 1, 1, 1, 10, 0, 3, 3, 0.0, 0.0, 0, 0);
+                4, 1, 1, 1, 0, 0, 3, 3, 0.5, 0.5, 0, 0);
     }
 }
