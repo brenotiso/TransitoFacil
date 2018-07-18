@@ -34,7 +34,7 @@ public class TelaInformacoesPlacas extends Tela {
     }
 
     private void construirTela() {
-        lbTitulo = new JLabel("Placas de Regulamentação");
+        lbTitulo = new JLabel("Placas" + descobrirTitulo());
         lbTitulo.setFont(new Font("", Font.BOLD, 28));
         painelImagemPlacas = new JPanel(new GridLayout(5, 1, 20, 20));
 
@@ -63,8 +63,30 @@ public class TelaInformacoesPlacas extends Tela {
         adicionarComponente(lbTitulo, GridBagConstraints.PAGE_START, GridBagConstraints.NONE,
                 0, 0, 2, 1, 3, 0, 0, 0, 0.5, 0.5, 0, 0);
         adicionarComponente(jsp, GridBagConstraints.CENTER, GridBagConstraints.NONE,
-                1, 0, 2, 1, 1, 1, 1, 1, 0.5, 0.5, 0, 0);
+                1, 0, 2, 1, 0, 0, 30, 0, 0.0, 0.0, 0, 0);
         adicionarComponente(btVoltar, GridBagConstraints.LAST_LINE_END, GridBagConstraints.NONE,
-                4, 1, 1, 1, 3, 3, 3, 3, 0.5, 0.5, 0, 0);
+                2, 1, 1, 1, 10, 0, 3, 3, 0.0, 0.0, 0, 0);
+    }
+    
+    private String descobrirTitulo() {
+        String[] imagemDividida = linkImagens.get(0).split("/");
+        String titulo;
+        switch (imagemDividida[3]) {
+            case "placaRegulamentacao1.png":
+                titulo = " de Regulamentação";
+                break;
+            case "placaAdvertencia1.png":
+                titulo = " de Advertência";
+                break;
+            case "placaIndicacao1.png":
+                titulo = " de Indicação";
+                break;
+            case "placaAtrativos1.png":
+                titulo = " de Atrativos turísticos";
+                break;
+            default:
+                titulo = " de Sinalização de Obras";
+        }
+        return titulo;
     }
 }
