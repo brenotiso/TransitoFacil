@@ -101,7 +101,7 @@ public class TelaPrincipal extends Tela {
             public void mouseEntered(MouseEvent e) {
                 jlPainelTitulo.setText("Uma infinidade de Placas!");
                 jlPainelDescricao.setIcon(imagemVazia);
-                jlPainelDescricao.setText("<html>Permite escolher qual tipo de placa deseja estudar.<br> Contém uma infinidade de placas que vão te preparar<br> para o simulado.</html>");
+                jlPainelDescricao.setText("<html>Escolha qual tipo de placa deseja estudar.<br/><br/> Contém uma infinidade de placas que vão<br/>te preparar para o simulado.</html>");
                 jlPainelDescricao.setHorizontalTextPosition(JLabel.CENTER);
             }
 
@@ -124,7 +124,7 @@ public class TelaPrincipal extends Tela {
             public void mouseEntered(MouseEvent e) {
                 jlPainelTitulo.setText("Informações gerais sobre Trânsito");
                 jlPainelDescricao.setIcon(imagemVazia);
-                jlPainelDescricao.setText("<html>Várias informações sobre trânsito<br> que vão te preparar para o simulado.</html>");
+                jlPainelDescricao.setText("<html>Várias informações sobre trânsito que<br>vão te preparar para o simulado.</html>");
                 jlPainelDescricao.setHorizontalTextPosition(JLabel.CENTER);
             }
 
@@ -147,7 +147,7 @@ public class TelaPrincipal extends Tela {
             public void mouseEntered(MouseEvent e) {
                 jlPainelTitulo.setText("Simulado sobre Placas");
                 jlPainelDescricao.setIcon(imagemVazia);
-                jlPainelDescricao.setText("<html>Várias questões abordando todos os tipos de placas.</html>");
+                jlPainelDescricao.setText("<html>Várias questões abordando todos os<br/>tipos de placas.</html>");
                 jlPainelDescricao.setHorizontalTextPosition(JLabel.CENTER);
             }
 
@@ -170,7 +170,7 @@ public class TelaPrincipal extends Tela {
             public void mouseEntered(MouseEvent e) {
                 jlPainelTitulo.setText("Simulado sobre Trânsito Geral");
                 jlPainelDescricao.setIcon(imagemVazia);
-                jlPainelDescricao.setText("<html>Várias questões abordando todo o conteúdo de trânsito.</html>");
+                jlPainelDescricao.setText("<html>Várias questões abordando todo o<br/>conteúdo de trânsito.</html>");
                 jlPainelDescricao.setHorizontalTextPosition(JLabel.CENTER);
             }
 

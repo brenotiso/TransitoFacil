@@ -28,7 +28,7 @@ public class TelaInformacoesPlacas extends Tela {
     private JLabel lbTitulo;
 
     public TelaInformacoesPlacas(ArrayList<String> linkImagens) {
-        super("Trânsito Fácil - Placas de Regulamentação");
+        super("Trânsito Fácil - Placas");
         this.linkImagens = linkImagens;
         construirTela();
     }
@@ -72,16 +72,16 @@ public class TelaInformacoesPlacas extends Tela {
         String[] imagemDividida = linkImagens.get(0).split("/");
         String titulo;
         switch (imagemDividida[3]) {
-            case "placaRegulamentacao1.png":
+            case "placaRegulamentacao.png":
                 titulo = " de Regulamentação";
                 break;
-            case "placaAdvertencia1.png":
+            case "placaAdvertencia.png":
                 titulo = " de Advertência";
                 break;
-            case "placaIndicacao1.png":
+            case "placaIndicacao.png":
                 titulo = " de Indicação";
                 break;
-            case "placaAtrativos1.png":
+            case "placaAtrativos.png":
                 titulo = " de Atrativos turísticos";
                 break;
             default:
