@@ -133,8 +133,8 @@ public class TelaPlacas extends Tela {
         adicionarComponente(btAtrativos, GridBagConstraints.LINE_END, GridBagConstraints.NONE,
                 2, 1, 1, 1, 3, 3, 3, 140, 0.5, 0.5, 0, 50);
         adicionarComponente(btSinalizacao, GridBagConstraints.CENTER, GridBagConstraints.NONE,
-                3, 0, 2, 1, 3, 3, 3, 3, 0.5, 0.5, 0, 50);
+                3, 0, 2, 1, 3, 3, 0, 3, 0.5, 0.5, 0, 50);
         adicionarComponente(btVoltar, GridBagConstraints.LAST_LINE_END, GridBagConstraints.NONE,
-                4, 1, 1, 1, 3, 3, 3, 3, 0.5, 0.5, 0, 0);
+                4, 1, 1, 1, 0, 0, 3, 3, 0.5, 0.5, 0, 0);
     }
 }

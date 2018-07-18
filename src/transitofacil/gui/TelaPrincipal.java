@@ -216,9 +216,9 @@ public class TelaPrincipal extends Tela {
         adicionarComponente(lbGrupo2, GridBagConstraints.PAGE_END, GridBagConstraints.NONE,
                 7, 0, 2, 1, 0, 3, 3, 3, 0.0, 0.0, 0, 0);
         adicionarComponente(lbGrupo3, GridBagConstraints.PAGE_END, GridBagConstraints.NONE,
-                8, 0, 2, 1, 0, 0, 3, 0, 0.0, 0.0, 0, 0);
+                8, 0, 2, 1, 0, 0, 0, 0, 0.0, 0.0, 0, 0);
         adicionarComponente(lbAddQuestoes, GridBagConstraints.PAGE_END, GridBagConstraints.NONE,
-                9, 0, 2, 1, 10, 0, 3, 0, 0.0, 0.0, 0, 0);
+                9, 0, 2, 1, 10, 0, 3, 3, 0.0, 0.0, 0, 0);
     }
 
     private void adicionarComponentePainelDescricao(Component comp, int anchor, int fill, int linha, int coluna, int larg, int alt,
