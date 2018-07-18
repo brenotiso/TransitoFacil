@@ -136,7 +136,7 @@ public class TelaSimulado extends Tela {
                 public void run() {
                     while (true) {
                         if (verificaGupos()) {
-                            adicionarComponente(btTerminar, GridBagConstraints.CENTER, GridBagConstraints.NONE, 2, 1, 1, 1, 0, 0, 0, 0);
+                            adicionarComponente(btTerminar, GridBagConstraints.CENTER, GridBagConstraints.NONE, 2, 1, 1, 1, 0, 0, 0, 0, 0.0, 0.0, 0, 0);
                             revalidate();
                             repaint();
                             return;
@@ -157,7 +157,7 @@ public class TelaSimulado extends Tela {
 
             jtpTabs.setPreferredSize(new Dimension(650, 430));
             // Adicionando os componentes à tela
-            adicionarComponente(jtpTabs, GridBagConstraints.CENTER, GridBagConstraints.NONE, 1, 1, 1, 1, 0, 0, 0, 0);
+            adicionarComponente(jtpTabs, GridBagConstraints.CENTER, GridBagConstraints.NONE, 1, 1, 1, 1, 0, 0, 0, 0, 0.0, 0.0, 0, 0);
 
         } else {
             //arrumar futuramente
@@ -169,11 +169,11 @@ public class TelaSimulado extends Tela {
                 }
             });
             JLabel nada = new JLabel("Nenhuma pergunta cadastrada!");
-            adicionarComponente(nada, GridBagConstraints.CENTER, GridBagConstraints.NONE, 1, 1, 1, 1, 0, 0, 0, 0);
-            adicionarComponente(btVoltar, GridBagConstraints.CENTER, GridBagConstraints.NONE, 2, 1, 1, 1, 0, 0, 0, 0);
+            adicionarComponente(nada, GridBagConstraints.CENTER, GridBagConstraints.NONE, 1, 1, 1, 1, 0, 0, 0, 0, 0.0, 0.0, 0, 0);
+            adicionarComponente(btVoltar, GridBagConstraints.CENTER, GridBagConstraints.NONE, 2, 1, 1, 1, 0, 0, 0, 0, 0.0, 0.0, 0, 0);
         }
 
         adicionarComponente(lbTitulo, GridBagConstraints.CENTER, GridBagConstraints.NONE,
-                0, 0, 0, 1, 0, 0, 0, 0);
+                0, 0, 0, 1, 0, 0, 0, 0, 0.0, 0.0, 0, 0);
     }
 }
