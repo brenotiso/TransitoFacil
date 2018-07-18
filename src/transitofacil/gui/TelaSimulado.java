@@ -22,9 +22,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTabbedPane;
+import javax.swing.JTextArea;
 import transitofacil.excecoes.ArquivoException;
 
 public class TelaSimulado extends Tela {
+
     private String tipoSimulado;
 
     private JLabel lbTitulo;
@@ -86,7 +88,14 @@ public class TelaSimulado extends Tela {
             int i = 1;
             for (Questao q : questoes) {
                 JPanel jp = new JPanel(new GridLayout(2, 1));
-                jp.add(new JLabel(q.getPergunta()));
+                JTextArea txaLabel = new JTextArea(q.getPergunta());
+                txaLabel.setFont(new Font("Arial", Font.BOLD, 13));
+                txaLabel.setLineWrap(true);
+                txaLabel.setWrapStyleWord(true);
+                txaLabel.setOpaque(false);
+                txaLabel.setEditable(false);
+                jp.add(txaLabel);
+                //jp.add(new JLabel(q.getPergunta()));
 
                 ArrayList<String> alternativas = q.getAlternativas();
                 JRadioButton alternativa1 = new JRadioButton(alternativas.get(0));
@@ -155,7 +164,7 @@ public class TelaSimulado extends Tela {
             });
             tTerminarSimulado.start();
 
-            jtpTabs.setPreferredSize(new Dimension(690, 430));
+            jtpTabs.setPreferredSize(new Dimension(645, 430));
             // Adicionando os componentes à tela
             adicionarComponente(jtpTabs, GridBagConstraints.CENTER, GridBagConstraints.NONE, 1, 1, 1, 1, 0, 0, 0, 0, 0.0, 0.0, 0, 0);
 
