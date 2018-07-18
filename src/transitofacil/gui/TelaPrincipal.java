@@ -116,7 +116,7 @@ public class TelaPrincipal extends Tela {
         btTransitoGeral.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                System.out.println("fazer");
+                chamarOutraJanela(TelaTransitoGeral.getInstance());
             }
         });
         btTransitoGeral.addMouseListener(new MouseAdapter() {
