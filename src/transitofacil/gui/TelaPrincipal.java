@@ -76,10 +76,9 @@ public class TelaPrincipal extends Tela {
         btTransitoGeral = new JButton("Trânsito geral");
         btSimuladoPlacas = new JButton("Simulado de placas");
         btSimuladoTransitoGeral = new JButton("Simulado de Trânsito geral");
-        
+
         imagemPrincipal = new ImageIcon("src/transitofacil/imgs/ImagemPrincipal.png");
         imagemVazia = new ImageIcon("src/transitofacil/imgs/nullImage.png");
-        
 
         gblPainel = new GridBagLayout();
         painelDescricao = new JPanel(gblPainel);
@@ -139,7 +138,10 @@ public class TelaPrincipal extends Tela {
         btSimuladoPlacas.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                chamarOutraJanela(new TelaSimulado("placas"));
+                int escolha = JOptionPane.showConfirmDialog(TelaPrincipal.this, "Uma vez iniciado o simulado deverá ser terminado!", "Deseja realmente iniciar este simulado?", JOptionPane.YES_NO_OPTION);
+                if (escolha == JOptionPane.YES_OPTION) {
+                    chamarOutraJanela(new TelaSimulado("placas"));
+                }
             }
         });
         btSimuladoPlacas.addMouseListener(new MouseAdapter() {
@@ -162,7 +164,10 @@ public class TelaPrincipal extends Tela {
         btSimuladoTransitoGeral.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                chamarOutraJanela(new TelaSimulado("geral"));
+                int escolha = JOptionPane.showConfirmDialog(TelaPrincipal.this, "Uma vez iniciado o simulado deverá ser terminado!", "Deseja realmente iniciar este simulado?", JOptionPane.YES_NO_OPTION);
+                if (escolha == JOptionPane.YES_OPTION) {
+                    chamarOutraJanela(new TelaSimulado("geral"));
+                }
             }
         });
         btSimuladoTransitoGeral.addMouseListener(new MouseAdapter() {

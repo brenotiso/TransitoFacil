@@ -41,7 +41,7 @@ public class TelaPlacas extends Tela {
         btIndicacao = new JButton("Placas de indicação");
         btAtrativos = new JButton("Placas de atrativos turísticos");
         btSinalizacao = new JButton("Placas de sinalização de obras");
-        btVoltar = new JButton("< Voltar");
+        btVoltar = new JButton("Voltar");
 
         btRegulamentacao.addActionListener(new ActionListener() {
             @Override
