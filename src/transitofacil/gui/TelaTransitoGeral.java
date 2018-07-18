@@ -4,6 +4,9 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
@@ -37,6 +40,50 @@ public class TelaTransitoGeral extends Tela {
         btPrimeirosSocorros = new JButton("Primeiros Socorros");
         btMecanica = new JButton("Mecânica");
         btVoltar = new JButton("< Voltar");
+        
+        btLegislacao.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                try {
+                    chamarOutraJanela(new TelaInformacoesTransitoGeral("src/transitofacil/linksTransitoGeral/legislacao.html"));
+                } catch (IOException ex) {
+                    Logger.getLogger(TelaTransitoGeral.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+        
+        btDirecaoDefensiva.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                try {
+                    chamarOutraJanela(new TelaInformacoesTransitoGeral("src/transitofacil/linksTransitoGeral/direcao_defensiva.html"));
+                } catch (IOException ex) {
+                    Logger.getLogger(TelaTransitoGeral.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+        
+        btPrimeirosSocorros.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                try {
+                    chamarOutraJanela(new TelaInformacoesTransitoGeral("src/transitofacil/linksTransitoGeral/primeiros_socorros.html"));
+                } catch (IOException ex) {
+                    Logger.getLogger(TelaTransitoGeral.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+        
+        btMecanica.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                try {
+                    chamarOutraJanela(new TelaInformacoesTransitoGeral("src/transitofacil/linksTransitoGeral/mecanica.html"));
+                } catch (IOException ex) {
+                    Logger.getLogger(TelaTransitoGeral.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
         
         btVoltar.addActionListener(new ActionListener() {
             @Override
