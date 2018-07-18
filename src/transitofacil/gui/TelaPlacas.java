@@ -170,5 +170,4 @@ public class TelaPlacas extends JFrame {
         gbl.setConstraints(comp, gbc); // adiciona o componente "comp" ao layout com as restrições previamente especificadas
         add(comp); // efetivamente insere o componente na tela
     }
-
 }
