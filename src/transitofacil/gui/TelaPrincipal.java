@@ -4,7 +4,6 @@ import transitofacil.simulado.*;
 
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -198,17 +197,28 @@ public class TelaPrincipal extends Tela {
         });
 
         // Adicionando os componentes à tela
-        adicionarComponente(lbTitulo, GridBagConstraints.PAGE_START, GridBagConstraints.NONE, 0, 0, 2, 1, 3, 3, 3, 3, 0.0, 0.5, 0, 0);
-        adicionarComponente(btPlacas, GridBagConstraints.LINE_START, GridBagConstraints.VERTICAL, 1, 0, 1, 1, 20, 75, 0, 0, 1.0, 1.0, 145, 10);
-        adicionarComponente(painelDescricao, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, 1, 1, 1, 4, 20, 0, 0, 50, 1.0, 1.0, 0, 0);
-        adicionarComponente(btTransitoGeral, GridBagConstraints.LINE_START, GridBagConstraints.VERTICAL, 2, 0, 1, 1, 0, 75, 0, 0, 1.0, 1.0, 91, 10);
-        adicionarComponente(btSimuladoPlacas, GridBagConstraints.LINE_START, GridBagConstraints.VERTICAL, 3, 0, 1, 1, 0, 75, 0, 0, 1.0, 1.0, 54, 10);
-        adicionarComponente(btSimuladoTransitoGeral, GridBagConstraints.LINE_START, GridBagConstraints.VERTICAL, 4, 0, 1, 1, 0, 75, 50, 0, 1.0, 1.0, 0, 10);
-        adicionarComponente(spFooter, GridBagConstraints.PAGE_END, GridBagConstraints.HORIZONTAL, 5, 0, 2, 1, 0, 0, 3, 0, 0.0, 0.0, 0, 0);
-        adicionarComponente(lbGrupo1, GridBagConstraints.PAGE_END, GridBagConstraints.NONE, 6, 0, 2, 1, 0, 3, 3, 3, 0.0, 0.0, 0, 0);
-        adicionarComponente(lbGrupo2, GridBagConstraints.PAGE_END, GridBagConstraints.NONE, 7, 0, 2, 1, 0, 3, 3, 3, 0.0, 0.0, 0, 0);
-        adicionarComponente(lbGrupo3, GridBagConstraints.PAGE_END, GridBagConstraints.NONE, 8, 0, 2, 1, 0, 0, 3, 0, 0.0, 0.0, 0, 0);
-        adicionarComponente(lbAddQuestoes, GridBagConstraints.PAGE_END, GridBagConstraints.NONE, 9, 0, 2, 1, 10, 0, 3, 0, 0.0, 0.0, 0, 0);
+        adicionarComponente(lbTitulo, GridBagConstraints.PAGE_START, GridBagConstraints.NONE,
+                0, 0, 2, 1, 3, 3, 3, 3, 0.0, 0.5, 0, 0);
+        adicionarComponente(btPlacas, GridBagConstraints.LINE_START, GridBagConstraints.VERTICAL,
+                1, 0, 1, 1, 20, 75, 0, 0, 1.0, 1.0, 145, 10);
+        adicionarComponente(painelDescricao, GridBagConstraints.LINE_START, GridBagConstraints.BOTH,
+                1, 1, 1, 4, 20, 0, 0, 50, 1.0, 1.0, 0, 0);
+        adicionarComponente(btTransitoGeral, GridBagConstraints.LINE_START, GridBagConstraints.VERTICAL,
+                2, 0, 1, 1, 0, 75, 0, 0, 1.0, 1.0, 91, 10);
+        adicionarComponente(btSimuladoPlacas, GridBagConstraints.LINE_START, GridBagConstraints.VERTICAL,
+                3, 0, 1, 1, 0, 75, 0, 0, 1.0, 1.0, 54, 10);
+        adicionarComponente(btSimuladoTransitoGeral, GridBagConstraints.LINE_START, GridBagConstraints.VERTICAL,
+                4, 0, 1, 1, 0, 75, 50, 0, 1.0, 1.0, 0, 10);
+        adicionarComponente(spFooter, GridBagConstraints.PAGE_END, GridBagConstraints.HORIZONTAL,
+                5, 0, 2, 1, 0, 0, 3, 0, 0.0, 0.0, 0, 0);
+        adicionarComponente(lbGrupo1, GridBagConstraints.PAGE_END, GridBagConstraints.NONE,
+                6, 0, 2, 1, 0, 3, 3, 3, 0.0, 0.0, 0, 0);
+        adicionarComponente(lbGrupo2, GridBagConstraints.PAGE_END, GridBagConstraints.NONE,
+                7, 0, 2, 1, 0, 3, 3, 3, 0.0, 0.0, 0, 0);
+        adicionarComponente(lbGrupo3, GridBagConstraints.PAGE_END, GridBagConstraints.NONE,
+                8, 0, 2, 1, 0, 0, 3, 0, 0.0, 0.0, 0, 0);
+        adicionarComponente(lbAddQuestoes, GridBagConstraints.PAGE_END, GridBagConstraints.NONE,
+                9, 0, 2, 1, 10, 0, 3, 0, 0.0, 0.0, 0, 0);
     }
 
     private void adicionarComponentePainelDescricao(Component comp, int anchor, int fill, int linha, int coluna, int larg, int alt,
