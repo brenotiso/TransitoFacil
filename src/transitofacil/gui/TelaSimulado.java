@@ -45,7 +45,7 @@ public class TelaSimulado extends Tela {
 
         this.tipoSimulado = tipoSimulado;
 
-        try { //verificar essa parte!!
+        try {
             construirTela();
         } catch (ArquivoException ex) {
             JOptionPane.showMessageDialog(this, ex.getMessage(),
@@ -95,7 +95,6 @@ public class TelaSimulado extends Tela {
                 txaLabel.setOpaque(false);
                 txaLabel.setEditable(false);
                 jp.add(txaLabel);
-                //jp.add(new JLabel(q.getPergunta()));
 
                 ArrayList<String> alternativas = q.getAlternativas();
                 JRadioButton alternativa1 = new JRadioButton(alternativas.get(0));
@@ -169,7 +168,6 @@ public class TelaSimulado extends Tela {
             adicionarComponente(jtpTabs, GridBagConstraints.CENTER, GridBagConstraints.NONE, 1, 1, 1, 1, 0, 0, 0, 0, 0.0, 0.0, 0, 0);
 
         } else {
-            //arrumar futuramente
             btVoltar = new JButton("Voltar");
             btVoltar.addActionListener(new ActionListener() {
                 @Override

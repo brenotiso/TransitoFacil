@@ -6,7 +6,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -53,7 +52,7 @@ public class Questoes {
                 ois = new ObjectInputStream(new FileInputStream(System.getProperty("user.dir") + "/" +arquivoAlvo));
                 questoes = (ArrayList<Questao>) ois.readObject();
                 ois.close();
-                //por padaro sao 20 questoes, caso mudar alterar o valor 20
+                //por padrao sao 20 questoes, caso mudar alterar o valor 20
                 if (questoes.size() > 20) {
                     Random rand = new Random();
                     for (int i = 0; i < 20; i++) {

@@ -138,7 +138,7 @@ public class TelaPrincipal extends Tela {
         btSimuladoPlacas.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                int escolha = JOptionPane.showConfirmDialog(TelaPrincipal.this, "Uma vez iniciado o simulado deverá ser terminado!", "Deseja realmente iniciar este simulado?", JOptionPane.YES_NO_OPTION);
+                int escolha = confirmarEntradaSimulado();
                 if (escolha == JOptionPane.YES_OPTION) {
                     chamarOutraJanela(new TelaSimulado("placas"));
                 }
@@ -164,7 +164,7 @@ public class TelaPrincipal extends Tela {
         btSimuladoTransitoGeral.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                int escolha = JOptionPane.showConfirmDialog(TelaPrincipal.this, "Uma vez iniciado o simulado deverá ser terminado!", "Deseja realmente iniciar este simulado?", JOptionPane.YES_NO_OPTION);
+                int escolha = confirmarEntradaSimulado();
                 if (escolha == JOptionPane.YES_OPTION) {
                     chamarOutraJanela(new TelaSimulado("geral"));
                 }
@@ -242,6 +242,11 @@ public class TelaPrincipal extends Tela {
         gbc.ipady = ipY;
         gblPainel.setConstraints(comp, gbc); // adiciona o componente "comp" ao layout com as restrições previamente especificadas
         painelDescricao.add(comp); // efetivamente insere o componente na tela
+    }
+
+    private int confirmarEntradaSimulado() {
+        return JOptionPane.showConfirmDialog(TelaPrincipal.this, "Uma vez iniciado o simulado deverá ser terminado!",
+                "Deseja realmente iniciar este simulado?", JOptionPane.YES_NO_OPTION);
     }
 
     private void adicionarQuestoes() {
